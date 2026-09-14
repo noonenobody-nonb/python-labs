@@ -126,11 +126,12 @@ def print_users() -> None:
             except IndexError as e:
                 print(e)
                 continue
+
 @log_event
 def login(username: str, password: str) -> bool:
     try:
         if username == "" or password == "":
-            raise ValueError("Username and password cannot be empty!")
+            raise ValueError("Username or password cannot be empty!")
 
         with open(os.path.join(folder_name, "users.csv"), "r", newline="", encoding="utf-8") as file:
             reader = csv.reader(file)
