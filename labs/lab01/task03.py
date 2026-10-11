@@ -1,9 +1,9 @@
-import hashlib
-import os
 import csv
 import functools
+import hashlib
 import json
-from datetime import datetime
+import os
+from datetime import datetime, timezone
 
 min_length = 9
 personal_salt = "00006"
@@ -29,7 +29,7 @@ def log_event(func):
         try:
             status = func(*args, **kwargs)
             return status
-        except Exception as e:
+        except TypeError as e:
             print(e)
             return
         finally:
@@ -47,7 +47,7 @@ def log_event(func):
 
             log_entry = {
                 "event": "login",
-                "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                "timestamp": datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S"),
                 "username": username,
                 "success": status,
                 "args": args,

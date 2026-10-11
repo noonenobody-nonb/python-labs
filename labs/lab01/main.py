@@ -1,6 +1,14 @@
-from task01 import passwords, criteria, print_strengths, check_passwords
-from task02 import users, resources, security_levels, blocked_users, print_access, print_resources
-from task03 import users_to_register, create_users, print_users, login
+from task01 import check_passwords, criteria, passwords, print_strengths
+from task02 import (
+    blocked_users,
+    print_access,
+    print_resources,
+    resources,
+    security_levels,
+    users,
+)
+from task03 import create_users, login, print_users, users_to_register
+
 
 def main():
     print_strengths(check_passwords(passwords, criteria))

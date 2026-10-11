@@ -1,6 +1,13 @@
 import random
+import sys
 from enum import Enum
+from pathlib import Path
 from string import ascii_uppercase, digits, punctuation
+
+root_dir = Path(__file__).resolve().parents[2]
+sys.path.append(str(root_dir))
+
+from shared.student import STUDENT_NAME, GROUP_NAME, VARIANT_NUMBER
 
 passwords = ["InfoS3c@2023", "simple123", "Def3ns3@Key", "public",
              "Encrypt3d#Pass", "basic123", "Secur3@Analysis", "temp123", "Pr0t3ct@Data",
