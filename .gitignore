@@ -4,6 +4,9 @@ __pycache__/
 .venv/
 .idea/
 labs/lab01/data/
+passwords.txt
+rockyou.txt
 
 *.log
 *.csv
+*.json
